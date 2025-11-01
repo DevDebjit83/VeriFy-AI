@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download VeriFy Extension</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .step {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .step-content {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-left: 40px;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #856404;
+        }
+
+        .success {
+            background: #d4edda;
+            border: 1px solid #28a745;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success.show {
+            display: block;
+            animation: slideUp 0.3s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <div class="icon">🛡️</div>
+            Download VeriFy Extension
+        </h1>
+        <p class="subtitle">Protect yourself from misinformation and deepfakes</p>
+
+        <div class="success" id="successMessage">
+            ✅ Download started! Follow the steps below to install the extension.
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">1</span>
+                Download Extension Files
+            </div>
+            <div class="step-content">
+                Click the button below to download the VeriFy extension package (ZIP file).
+                <button class="download-btn" onclick="downloadExtension()">
+                    <span>⬇️</span>
+                    Download Extension ZIP
+                    <span>→</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">2</span>
+                Extract the ZIP File
+            </div>
+            <div class="step-content">
+                Extract the downloaded ZIP file to a folder on your computer (e.g., Downloads/verify-extension).
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">3</span>
+                Open Chrome Extensions
+            </div>
+            <div class="step-content">
+                Open Chrome and navigate to:
+                <div class="code">chrome://extensions/</div>
+                Or click the puzzle icon (🧩) in Chrome toolbar → "Manage Extensions"
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">4</span>
+                Enable Developer Mode
+            </div>
+            <div class="step-content">
+                Toggle the "Developer mode" switch in the top-right corner of the extensions page.
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">5</span>
+                Load Unpacked Extension
+            </div>
+            <div class="step-content">
+                1. Click the "Load unpacked" button<br>
+                2. Navigate to the extracted folder<br>
+                3. Select the "chrome-extension" folder<br>
+                4. Click "Select Folder"
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">6</span>
+                Start Using VeriFy! 🎉
+            </div>
+            <div class="step-content">
+                The VeriFy icon will appear in your Chrome toolbar. Click it to start detecting deepfakes, fake news, and manipulated content!
+            </div>
+        </div>
+
+        <div class="note">
+            <strong>⚠️ Note:</strong> Chrome extensions must be loaded manually for security reasons. This is a one-time setup process. The extension will remain installed and update automatically.
+        </div>
+    </div>
+
+    <script>
+        function downloadExtension() {
+            // Show success message
+            document.getElementById('successMessage').classList.add('show');
+
+            // Create a temporary link element to trigger download
+            const link = document.createElement('a');
+            link.href = '/verify-extension.zip';
+            link.download = 'verify-extension.zip';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Scroll to top to see success message
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Auto-download if coming from main page
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('auto') === 'true') {
+            setTimeout(() => {
+                downloadExtension();
+            }, 500);
+        }
+    </script>
+</body>
+</html>
